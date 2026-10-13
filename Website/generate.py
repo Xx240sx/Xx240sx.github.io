@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import quote, urlsplit
 from xml.etree import ElementTree
 
-SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
+SITEMAP_NAMESPACE = "https://xx240sx.github.io/index.html"
 ElementTree.register_namespace("", SITEMAP_NAMESPACE)
 
 
