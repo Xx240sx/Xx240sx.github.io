@@ -1,0 +1,60 @@
+{
+  "profile": {
+    "name": "MintyTheFox",
+    "tagline": "Custom 3D modeling, Unity setup, PhysBones, toggles, and texture edits — made for the way you want to show up.",
+    "commission_status": "open",
+    "discord_tag": "mintythefloof"
+  },
+  "avatars": [
+    {
+      "title": "Neon Wanderer",
+      "image": "",
+      "features": ["PhysBones", "Custom Toggles", "Audio Link"],
+      "demo_url": ""
+    },
+    {
+      "title": "Moonlit Pilot",
+      "image": "",
+      "features": ["Quest Version", "Gesture FX", "Custom Textures"],
+      "demo_url": ""
+    },
+    {
+      "title": "Forest Spirit",
+      "image": "",
+      "features": ["PhysBones", "Particle Props", "Unity Setup"],
+      "demo_url": ""
+    }
+  ],
+  "tiers": [
+    {
+      "label": "Tier 1",
+      "name": "Texture / Unity Optimization",
+      "price": "From £30",
+      "description": "Focused updates, fixes, and platform optimization for an existing avatar.",
+      "features": ["Re-texturing", "Broken toggle fixes", "Quest conversion estimate"]
+    },
+    {
+      "label": "Tier 2",
+      "name": "Base Edit / Kitbash",
+      "price": "From £136",
+      "description": "Assembling licensed pre-existing assets, custom textures, and PhysBones setup.",
+      "features": ["Licensed asset assembly", "Custom textures", "PhysBones and Unity setup"]
+    }
+  ],
+  "addons": [
+    {"name": "DPS/TPS setup", "price": "From £30"},
+    {"name": "Custom props", "price": "From £19"},
+    {"name": "Quest version", "price": "From £45"},
+    {"name": "Extra toggle or animation", "price": "From £11"}
+  ],
+  "socials": [
+    {"label": "Discord contact / server", "url": ""},
+    {"label": "Twitter / X", "url": ""},
+    {"label": "VRChat profile", "url": ""},
+    {"label": "Gumroad / Booth", "url": ""},
+    {"label": "Ko-fi / Throne", "url": ""}
+  ],
+  "contact": {
+    "email": "grayleland573@gmail.com"
+  }
+}
