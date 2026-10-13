@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="A thoughtful portfolio for a designer, developer, or independent creative.">
+  <title>Your Name — Designer &amp; Developer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f0;
+      --ink: #20231f;
+      --muted: #70756d;
+      --line: #dedfd7;
+      --green: #3b684c;
+      --green-dark: #294936;
+      --lime: #d8ef9c;
+      --white: #fffefa;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+    .mark {
+      display: grid;
+      width: 30px;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+    }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    nav a:hover { color: var(--ink); }
+    nav .nav-cta {
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+    }
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 620px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 48px;
+      padding-block: 92px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 25px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #78a45e;
+      content: "";
+    }
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(52px, 7.1vw, 88px);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    h1 em { color: var(--green); font-weight: 400; }
+    .hero-copy {
+      max-width: 490px;
+      margin: 27px 0 30px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .button svg { width: 15px; height: 15px; }
+    .hero-note {
+      align-self: end;
+      justify-self: end;
+      width: min(100%, 350px);
+      padding: 30px;
+      border: 1px solid #e6e6dc;
+      border-radius: 5px;
+      background: #eeeee6;
+      transform: rotate(2deg);
+    }
+    .note-art {
+      position: relative;
+      display: grid;
+      min-height: 215px;
+      overflow: hidden;
+      place-items: center;
+      border-radius: 3px;
+      background: #d5e1ca;
+    }
+    .sun {
+      position: absolute;
+      top: 30px;
+      right: 36px;
+      width: 50px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #e9efbb;
+    }
+    .hill {
+      position: absolute;
+      right: -10%;
+      bottom: -43%;
+      width: 120%;
+      height: 85%;
+      border-radius: 50% 50% 0 0;
+      background: #78916c;
+      transform: rotate(-9deg);
+    }
+    .hill::after {
+      position: absolute;
+      top: -18%;
+      left: -12%;
+      width: 85%;
+      height: 85%;
+      border-radius: 50% 50% 0 0;
+      background: #9baa7e;
+      content: "";
+    }
+    .note-caption {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 19px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .section { padding-block: 88px; border-top: 1px solid var(--line); }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 35px;
+    }
+    .section-heading .eyebrow { margin-bottom: 13px; }
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 54px);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: 1.05;
+    }
+    .section-intro {
+      max-width: 300px;
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .project {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--white);
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #20231f0d; }
+    .project-art {
+      display: grid;
+      min-height: 210px;
+      overflow: hidden;
+      place-items: center;
+      padding: 28px;
+    }
+    .art-one { background: #e8e7dc; }
+    .art-two { background: #dce7dc; }
+    .art-three { background: #eee1d4; }
+    .mock-window {
+      width: 100%;
+      max-width: 260px;
+      min-height: 145px;
+      padding: 17px;
+      border: 1px solid #ffffffa8;
+      border-radius: 5px;
+      background: #f9f8f2;
+      box-shadow: 0 12px 30px #27332612;
+    }
+    .mock-dots { display: flex; gap: 4px; margin-bottom: 17px; }
+    .mock-dots i { width: 5px; height: 5px; border-radius: 50%; background: #b8beb0; }
+    .mock-line { height: 5px; width: 58%; margin: 7px 0; border-radius: 5px; background: #d9ddd3; }
+    .mock-line.short { width: 34%; }
+    .mock-block { width: 100%; height: 42px; margin-top: 14px; border-radius: 3px; background: #9db393; }
+    .art-two .mock-block { background: #d0b6aa; }
+    .art-three .mock-block { background: #c3a65f; }
+    .project-info { padding: 20px 20px 21px; }
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 9px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .project h3 { margin: 0; font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.03em; }
+    .about {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .about-copy { max-width: 600px; }
+    .about-copy p { margin: 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .about-copy p:first-child { color: var(--ink); font-family: var(--serif); font-size: 25px; line-height: 1.45; }
+    .contact-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 42px 45px;
+      border-radius: 5px;
+      background: var(--green-dark);
+      color: white;
+    }
+    .contact-panel .eyebrow { color: var(--lime); }
+    .contact-panel h2 { max-width: 540px; font-size: clamp(36px, 5vw, 52px); }
+    .contact-panel .button { flex: 0 0 auto; background: var(--lime); color: var(--green-dark); }
+    .contact-panel .button:hover { background: white; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 28px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topbar { height: 68px; }
+      nav { gap: 16px; }
+      nav a { font-size: 12px; }
+      nav .nav-cta { padding: 9px 12px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 42px; padding-block: 74px; }
+      .hero-note { width: min(82%, 340px); justify-self: end; }
+      .note-art { min-height: 175px; }
+      .section { padding-block: 66px; }
+      .projects { grid-template-columns: 1fr 1fr; }
+      .project:last-child { grid-column: 1 / -1; }
+      .project:last-child .project-art { min-height: 175px; }
+      .about { grid-template-columns: 1fr; gap: 25px; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 32px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 32px); }
+      nav { gap: 13px; }
+      nav a { font-size: 11px; }
+      nav .nav-cta { padding: 8px 10px; }
+      .wordmark { gap: 7px; font-size: 12px; }
+      .mark { width: 27px; }
+      .hero { padding-block: 60px; }
+      .hero-copy { font-size: 14px; }
+      .hero-note { width: 90%; padding: 22px; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+      .projects { grid-template-columns: 1fr; }
+      .project:last-child { grid-column: auto; }
+      .project-art, .project:last-child .project-art { min-height: 190px; }
+      .contact-panel { padding: 28px 24px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#top" aria-label="Your Name, home">
+      <span class="mark" aria-hidden="true">Y</span>
+      <span>Your Name</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">Independent creative · Available for projects</p>
+        <h1 id="intro-title">Thoughtful design for a <em>better</em> everyday.</h1>
+        <p class="hero-copy">I’m Your Name, a designer and developer partnering with good people to make useful, lasting things for the web.</p>
+        <a class="button" href="#work">
+          Explore my work
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10h11m-4.5-4.5L15.5 10 11 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-note" aria-label="Abstract illustration of a sunny landscape">
+        <div class="note-art" aria-hidden="true">
+          <span class="sun"></span>
+          <span class="hill"></span>
+        </div>
+        <div class="note-caption"><span>A little room to grow</span><span>01 / 03</span></div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected projects</p>
+          <h2 id="work-title">A few things I’ve made.</h2>
+        </div>
+        <p class="section-intro">A selection of recent work across digital products, identities, and the spaces in between.</p>
+      </div>
+      <div class="projects">
+        <a class="project" href="#contact" aria-label="Discuss a project like Fieldnotes">
+          <div class="project-art art-one" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-dots"><i></i><i></i><i></i></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line"></div>
+              <div class="mock-block"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Digital product</span><span>2025</span></div>
+            <h3>Fieldnotes</h3>
+          </div>
+        </a>
+        <a class="project" href="#contact" aria-label="Discuss a project like Stillroom">
+          <div class="project-art art-two" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-dots"><i></i><i></i><i></i></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line"></div>
+              <div class="mock-block"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Brand &amp; website</span><span>2024</span></div>
+            <h3>Stillroom</h3>
+          </div>
+        </a>
+        <a class="project" href="#contact" aria-label="Discuss a project like Common Ground">
+          <div class="project-art art-three" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-dots"><i></i><i></i><i></i></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line"></div>
+              <div class="mock-block"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Creative direction</span><span>2024</span></div>
+            <h3>Common Ground</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="wrap section about" id="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">A little about me</p>
+        <h2 id="about-title">Good work starts with listening.</h2>
+      </div>
+      <div class="about-copy">
+        <p>I bring clear thinking and a hands-on approach to every collaboration.</p>
+        <p>From the first sketch to the final details, I care about making digital experiences that feel considered, work beautifully, and make life a little easier.</p>
+        <p>When I’m not at my desk, you’ll probably find me outside, collecting good ideas and excellent coffee.</p>
+      </div>
+    </section>
+
+    <section class="wrap section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Have something in mind?</p>
+          <h2 id="contact-title">Let’s make something meaningful.</h2>
+        </div>
+        <a class="button" href="mailto:hello@example.com">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year">2025</span> Your Name. Made with care.</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
